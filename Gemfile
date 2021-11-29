@@ -8,6 +8,10 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 gem 'hirb'
 
+# frontend
+gem 'webpacker'
+gem 'sass-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

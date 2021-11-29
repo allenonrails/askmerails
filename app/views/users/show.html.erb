@@ -1,5 +1,5 @@
 <h1><%= @user.name %></h1>
 
-<img src="<%= @user.avatar_url %>" alt="avatar">
+<%= image_tag user_avatar(@user), alt: "[Avatar] #{@user.name}" %>
 
 <h2><%= @user.username %></h2>

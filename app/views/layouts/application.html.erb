@@ -6,27 +6,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_pack_tag 'application' %>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
   </head>
 
 <body>
-  <div class="header">
+  <header class="navbar">
     <div class="container">
-      <div class="header-logo">
-        <%# Ссылка на главную страницу сайта (root_path) %>
-        <h1 class="header-title"><%= link_to "Хорошие вопросы", root_path %></h1>
+      <div class="navbar__wrap row">
+        <%= link_to 'Askmerails', root_path, class: 'navbar__logo' %>
+        <div class="navbar__auth">
+          <button class="btn navbar__btn">Зарегестрироваться</button>
+          <button class="btn navbar__btn">Войти</button>
+        </div>
       </div>
     </div>
-  </div>
-
+    
+  </header>
+  
   <div class="content">
     <div class="container">
-      <%# Вместо волшебной конструкции yield рельсы подставят то, что срендерит %>
-      <%# шаблон для нужной нам страницы, например, users/show %>
       <%= yield %>
     </div>
   </div>
+  
 </body>
 </html>
