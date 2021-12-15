@@ -2,7 +2,5 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  resources :users
-
-  get 'show' => "users#show"
+  resources :users, except: [:destroy]
 end

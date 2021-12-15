@@ -1,0 +1,36 @@
+.questions{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 16px;
+}
+.question {
+  background-color: #fcfcfd;
+  border-radius: 5px;
+  color: #0f0f0f;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition: .5s ease-in-out;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 14px 28px, rgba(0, 0, 0, 0.82) 0px 10px 10px;
+  }
+  &__text {
+    font-size: 20px;
+    margin-bottom: 11px;
+    svg {
+      width: 30px;
+      height: 30px;
+      transition: 1s ease
+    }
+    &:hover {
+      svg {
+        transform: rotate(360deg)
+      }
+    }
+  }
+  &__date {
+    display: block;
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+  }
+}

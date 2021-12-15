@@ -1,0 +1,42 @@
+.user-page{
+  color: #f3f3f3;
+  &__header{
+    display: flex;
+    padding: 60px 0;
+    max-width: 600px;
+  }
+  &__avatar {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+  }
+  &__text {
+    margin-left: 40px;
+  }
+  &__nickname {
+    margin-bottom: 10px;
+  }
+  &__title{
+    margin-bottom: 5px;
+  }
+  @media screen and (max-width: 576px){
+    &__header {
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    &__avatar {
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+    &__text {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="question">
+  <h4 class="question__text">
+    <%= question.text %>
+  </h4>
+  <span class="question__date">
+    <%= question.created_at.strftime('%d %b %M:%H') %>
+  </span>
+  <% if question.answer.present? %>
+    <p class="question__answer">
+      <%= question.answer %>
+    </p>
+  <% end %>
+</div>

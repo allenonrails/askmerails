@@ -1,0 +1,28 @@
+.form {
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 10px;
+  padding: 20px 10px;
+  background-color: #fcfcfd;
+  &-label {
+    display: block;
+    font-size: 20px;
+  }
+  &__field {
+    margin-bottom: 15px;
+  }
+  &-text-field {
+    outline: none;
+    background-color: #262732;
+    border: 0;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #fcfcfd
+  }
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}

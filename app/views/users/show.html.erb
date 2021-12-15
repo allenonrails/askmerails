@@ -1,5 +1,25 @@
-<h1><%= @user.name %></h1>
+<div class="user-page">
+  <div class="user-page__header">
+    <div class="user-page__avatar">
+      <%= image_tag user_avatar(@user), alt: "[Avatar] #{@user.name}" %>
+    </div>
+    <div class="user-page__text">
+      <h3 class="user-page__nickname">
+        <%= @user.username %>
+      </h3>
+      <h2 class="user-page__title">
+        <%= @user.name %>
+      </h2>
+      <p class="user-page__bio">
+        Dolor nisi sit recusandae dolore aspernatur Dolor ducimus quibusdam molestiae illo hic cum. Iure inventore autem quisquam provident mollitia nam
+      </p>
+      <%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'btn', style: 'margin-top: 30px' %>
+    </div>
+  </div>
+</div>
 
-<%= image_tag user_avatar(@user), alt: "[Avatar] #{@user.name}" %>
-
-<h2><%= @user.username %></h2>
+<div class="questions">
+  <% @questions.each do |question| %>
+    <%= render partial: 'questions/question', object: question %>
+  <% end %>
+</div>

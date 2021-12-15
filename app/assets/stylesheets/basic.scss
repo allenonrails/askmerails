@@ -16,6 +16,10 @@ img {
   padding: 0 20px
 }
 
+@media screen and (max-width: 576px){
+  padding: 0 10px;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -78,4 +82,47 @@ img {
 .btn:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.btn-dark {
+  background-color: #262732;
+  color: #fcfcfd;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#262732 0 -3px 0 inset;
+}
+
+.btn-dark:focus {
+  box-shadow: #262732 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #262732 0 -3px 0 inset;
+}
+
+.btn-dark:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #262732 0 -3px 0 inset;
+}
+
+.btn-dark:active {
+  box-shadow: #262732 0 3px 7px inset;
+}
+
+.flash {
+  &-success {
+    padding: 20px 10px;
+    background-color: #699B2C;
+    color: #fdfcfd;
+    font-weight: 700px;
+    font-size: 18px;
+  }
+  &-error {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    background-color: #ed1b24;
+    color: #fdfdfc;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

@@ -1,60 +1,20 @@
 <h1 class="title">Пользователи</h1>
 
 <div class="users">
-  <div class="user-card">
-    <div class="user-card__header">
-      <div class="user-card__avatar">
-        <img src="<%= asset_path 'avatar.jpg' %>" alt="">
+  <% @users.each do |user| %>
+    <div class="user-card">
+      <div class="user-card__header">
+        <div class="user-card__avatar">
+          <%= image_tag user_avatar(user) %>
+        </div>
+        <div class="user-card__text">
+          <h2 class="user-card__title"><%= user.name %></h2>
+          <%= link_to user.username, user_path(user), class: 'user-card__link' %>
+        </div>
       </div>
-      <div class="user-card__text">
-        <h2 class="user-card__title">Andrey Syr1tsa</h2>
-        <a class="user-card__link" href="#">@admin</a>
-      </div>
-    </div>
-    <div class="user-card__bottom">
-      <button class="btn user-card__btn">Задать вопрос</button>
-    </div>
-  </div>
-  <div class="user-card">
-    <div class="user-card__header">
-      <div class="user-card__avatar">
-        <img src="<%= asset_path 'avatar.jpg' %>" alt="">
-      </div>
-      <div class="user-card__text">
-        <h2 class="user-card__title">Andrey Syr1tsa</h2>
-        <a class="user-card__link" href="#">@admin</a>
+      <div class="user-card__bottom">
+        <%= link_to 'Задать вопрос', user_path(user), class: 'btn user-card__btn' %>
       </div>
     </div>
-    <div class="user-card__bottom">
-      <button class="btn user-card__btn">Задать вопрос</button>
-    </div>
-  </div>
-  <div class="user-card">
-    <div class="user-card__header">
-      <div class="user-card__avatar">
-        <img src="<%= asset_path 'avatar.jpg' %>" alt="">
-      </div>
-      <div class="user-card__text">
-        <h2 class="user-card__title">Andrey Syr1tsa</h2>
-        <a class="user-card__link" href="#">@admin</a>
-      </div>
-    </div>
-    <div class="user-card__bottom">
-      <button class="btn user-card__btn">Задать вопрос</button>
-    </div>
-  </div>
-  <div class="user-card">
-    <div class="user-card__header">
-      <div class="user-card__avatar">
-        <img src="<%= asset_path 'avatar.jpg' %>" alt="">
-      </div>
-      <div class="user-card__text">
-        <h2 class="user-card__title">Andrey Syr1tsa</h2>
-        <a class="user-card__link" href="#">@admin</a>
-      </div>
-    </div>
-    <div class="user-card__bottom">
-      <button class="btn user-card__btn">Задать вопрос</button>
-    </div>
-  </div>
+  <% end %>
 </div>
