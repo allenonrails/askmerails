@@ -18,8 +18,13 @@
       <div class="navbar__wrap row">
         <%= link_to 'Askmerails', root_path, class: 'navbar__logo' %>
         <div class="navbar__auth">
-          <button class="btn navbar__btn">Зарегестрироваться</button>
-          <button class="btn navbar__btn">Войти</button>
+          <% if current_user %>
+            <%= link_to 'Выход', log_out_path, class: 'btn navbar__btn' %>
+            <%= link_to 'Мой профиль', user_path(current_user), class: 'btn navbar__btn' %>
+          <% else %>
+            <%= link_to 'Зарегестрироваться', sign_up_path, class: 'btn navbar__btn' %>
+            <%= link_to 'Войти', log_in_path, class: 'btn navbar__btn' %>
+          <% end %>
         </div>
       </div>
     </div>

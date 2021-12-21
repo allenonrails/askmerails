@@ -11,11 +11,19 @@
         <%= @user.name %>
       </h2>
       <p class="user-page__bio">
-        Dolor nisi sit recusandae dolore aspernatur Dolor ducimus quibusdam molestiae illo hic cum. Iure inventore autem quisquam provident mollitia nam
+        <%= @user.description %>
       </p>
-      <%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'btn', style: 'margin-top: 30px' %>
+      <% if @user == current_user %>
+        <%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'btn', style: 'margin-top: 30px' %>
+      <% end %>
     </div>
   </div>
+</div>
+
+<div class="questions-info">
+  <span class="questions-info__count">
+    Всего вопросов: <%= @questions.count %>
+  </span>
 </div>
 
 <div class="questions">

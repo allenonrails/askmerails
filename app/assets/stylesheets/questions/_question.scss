@@ -2,6 +2,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 16px;
+  &-info {
+    margin-top: -30px;
+    margin-bottom: 40px;
+    @media screen and (max-width: 576px){
+      text-align: center;
+    }
+    &__count{
+      padding: 10px 15px;
+      border-radius: 5px;
+      background-color: #fcfcfd;
+      font-size: 16px;
+    }
+  }
 }
 .question {
   background-color: #fcfcfd;

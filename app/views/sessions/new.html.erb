@@ -1,0 +1,19 @@
+<h1 class="title">Войти на сайт</h1>
+
+<div class="form">
+  <%= form_tag sessions_path do %>
+    <div class="form__field">
+      <%= label_tag :email, 'Логин (email)', class: 'form-label' %>
+      <%= text_field_tag :email, params[:email], class: 'form-text-field' %>
+    </div>
+
+    <div class="form__field">
+      <%= label_tag :password, 'Пароль', class: 'form-label' %>
+      <%= password_field_tag :password, '', class: 'form-text-field' %>
+    </div>
+
+    <div class="form__field">
+      <%= submit_tag 'Войти', class: 'btn btn-dark form__btn' %>
+    </div>
+  <% end %>
+</div>
