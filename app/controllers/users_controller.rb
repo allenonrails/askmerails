@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.last(8)
+    @tags = Tag.with_questions
   end
 
   def new

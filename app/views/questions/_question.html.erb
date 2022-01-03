@@ -11,6 +11,10 @@
     </p>
   <% end %>
 
+  <% if question.tags.present? %>
+    <%= question.tags.map { |t| link_to "##{t.title}", tag_path(t.id) }.join(', ').html_safe %>
+  <% end %>
+
   <% if question.user == current_user %>
     <div class="qeustion__actions">
       <%= link_to 'Удалить', question_path(question), method: :delete,
