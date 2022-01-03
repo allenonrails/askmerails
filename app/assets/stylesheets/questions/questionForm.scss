@@ -1,0 +1,13 @@
+.question-form {
+  display: none;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  &__label {
+    
+  }
+}
+
+.question-form-show {
+  display: block;
+}

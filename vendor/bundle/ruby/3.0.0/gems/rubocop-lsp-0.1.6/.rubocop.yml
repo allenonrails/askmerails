@@ -1,0 +1,9 @@
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  SuggestExtensions: false
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table

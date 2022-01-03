@@ -1,13 +1,23 @@
-<div class="question">
+<div class="question" style="background-color: <%= question.color %>">
   <h4 class="question__text">
     <%= question.text %>
   </h4>
   <span class="question__date">
-    <%= question.created_at.strftime('%d %b %M:%H') %>
+    <%= l(question.created_at, format: :short) %>
   </span>
   <% if question.answer.present? %>
     <p class="question__answer">
       <%= question.answer %>
     </p>
+  <% end %>
+
+  <% if question.user == current_user %>
+    <div class="qeustion__actions">
+      <%= link_to 'Удалить', question_path(question), method: :delete,
+          data: { confirm: 'Уверены, что хотите удалить вопрос'}, class: 'btn' %>
+      <% unless question.answer.present? %>
+        <%= link_to 'Редактировать', edit_question_path(question), class: 'btn' %>
+      <% end %>
+    </div>
   <% end %>
 </div>

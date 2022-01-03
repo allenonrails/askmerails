@@ -11,10 +11,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      flash[:success] = "#{@question.user.name}, вопрос успешно создан "
+      flash[:success] = "Вопрос для #{@question.user.name} успешно создан!"
       redirect_to user_path(@question.user) 
     else
-      render :new
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -30,9 +30,11 @@ class QuestionsController < ApplicationController
 
   # DELETE /questions/1
   def destroy
+    user = @question.user
     @question.destroy
-    flash[:success] = "#{@question.user.name}, вопрос успешно обновлён"
-    redirect_to questions_url 
+
+    flash[:success] = "#{user.name}, вопрос удалён"
+    redirect_to user_path(user) 
   end
 
   private
@@ -45,6 +47,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:user_id, :text, :answer)
+      params.require(:question).permit(:user_id, :text, :answer, :color)
     end
 end

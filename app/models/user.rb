@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   validates :username, format: { with: USERNAME_REGEX }, length: { maximum: 20 }, presence: true, uniqueness: true
   validates :email, format: { with: EMAIL_REGEX }, presence: true, uniqueness: true
-  validates :description, presence: true, length: { minimun: 50, maximum: 255 }
+  validates :description, length: { maximum: 255 }
   validates :password, presence: true, on: :create, confirmation: true
   
   before_validation :to_lower_case

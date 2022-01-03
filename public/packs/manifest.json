@@ -9,6 +9,16 @@
       "js.map": [
         "/packs/js/application-b79847a82961d80177ce.js.map"
       ]
+    },
+    "users": {
+      "js": [
+        "/packs/js/users-f50445e2fa0e2fc5e534.js"
+      ],
+      "js.map": [
+        "/packs/js/users-f50445e2fa0e2fc5e534.js.map"
+      ]
     }
-  }
+  },
+  "users.js": "/packs/js/users-f50445e2fa0e2fc5e534.js",
+  "users.js.map": "/packs/js/users-f50445e2fa0e2fc5e534.js.map"
 }
