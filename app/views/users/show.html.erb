@@ -1,7 +1,5 @@
 <div class="user-page">
-  <div class="user-page__header">
-    <div class="user-page__avatar">
-      <%= image_tag user_avatar(@user), alt: "[Avatar] #{@user.name}" %>
+  <div class="user-page__header"> <div class="user-page__avatar"> <%= image_tag user_avatar(@user), alt: "[Avatar] #{@user.name}" %>
     </div>
     <div class="user-page__text">
       <h3 class="user-page__nickname">
@@ -37,15 +35,15 @@
           </ul>
         </div>
       <% end %>
-    <div class="form-field">
-      <%= f.label 'Цвет вашего блока профиля', class: 'form-label' %>
-      <%= f.select :color, @colors %>
-    </div>
-    <%= f.hidden_field :user_id %>
+      <%= f.hidden_field :user_id %>
 
     <div class="form-field">
-      <%= f.label "Задать вопрос", class: 'question-form__label' %>
-      <%= f.text_area :text, class: 'question-form__textarea' %>
+      <%= f.label 'Цвет вашего блока профиля', class: 'form-label' %>
+      <%= f.select :color, @colors, {},{class: 'question-form__select'} %>
+    </div>
+
+    <div class="form-field">
+      <%= f.text_area :text, placeholder: 'Ваш вопрос...', class: 'question-form__textarea' %>
     </div>
 
     <div class="question-form__action">

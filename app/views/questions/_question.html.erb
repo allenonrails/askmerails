@@ -2,9 +2,15 @@
   <h4 class="question__text">
     <%= question.text %>
   </h4>
+
+  <p class="question_recipient">
+    Вопрос для <%= link_to question.user.username, user_path(question.user) %>
+  </p>
+
   <span class="question__date">
     <%= l(question.created_at, format: :short) %>
   </span>
+
   <% if question.answer.present? %>
     <p class="question__answer">
       <%= question.answer %>
@@ -20,7 +26,7 @@
       <%= link_to 'Удалить', question_path(question), method: :delete,
           data: { confirm: 'Уверены, что хотите удалить вопрос'}, class: 'btn' %>
       <% unless question.answer.present? %>
-        <%= link_to 'Редактировать', edit_question_path(question), class: 'btn' %>
+        <%= link_to 'Ответить', edit_question_path(question), class: 'btn' %>
       <% end %>
     </div>
   <% end %>

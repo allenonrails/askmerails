@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    @colors = Question.colors
   end
 
   # POST /questions

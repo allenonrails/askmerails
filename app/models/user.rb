@@ -14,11 +14,38 @@ class User < ApplicationRecord
   validates :username, format: { with: USERNAME_REGEX }, length: { maximum: 20 }, presence: true, uniqueness: true
   validates :email, format: { with: EMAIL_REGEX }, presence: true, uniqueness: true
   validates :description, length: { maximum: 255 }
-  validates :password, presence: true, on: :create, confirmation: true
+  validates :password, presence: true, on: :create, confirmation: true, length: { minimum: 6 }
+
+  validate :password_lower_case
+  validate :password_uppercase
+  validate :password_special_char
+  validate :password_contains_number
   
   before_validation :to_lower_case
 
   before_save :encrypt_password
+
+  def password_uppercase
+    return if !!password.match(/\p{Upper}/)
+    errors.add :password, ' must contain at least 1 uppercase '
+  end
+
+  def password_lower_case
+    return if !!password.match(/\p{Lower}/)
+    errors.add :password, ' must contain at least 1 lowercase '
+  end
+
+  def password_special_char
+    special = "?<>',?[]}{=-)(*&^%$#`~{}!"
+    regex = /[#{special.gsub(/./){|char| "\\#{char}"}}]/
+    return if password =~ regex
+    errors.add :password, ' must contain special character'
+  end
+
+  def password_contains_number
+    return if password.count("0-9") > 0
+    errors.add :password, ' must contain at least one number'
+  end
 
   def encrypt_password
     if self.password.present?

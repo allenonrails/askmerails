@@ -1,5 +1,5 @@
 <div class="user-questions buffer-both">
-  <h1>Список вопросов для тэга <%= @tag.title %></h1>
+  <h1 class="title">Список вопросов для тэга <%= @tag.title %></h1>
   <div class="questions-list">
     <% @questions.each do |question| %>
       <%= render partial: 'questions/question', object: question %>
