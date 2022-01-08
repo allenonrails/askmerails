@@ -5,6 +5,8 @@ ruby '3.0.2'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'puma', '~> 5.0'
+
+gem 'rails_12factor'
 gem 'uglifier'
 
 # frontend
