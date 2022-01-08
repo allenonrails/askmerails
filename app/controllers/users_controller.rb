@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @user.update(user_edit_params)
       flash[:success] = "#{@user.name}, изменения сохранены :)"
       redirect_to action: 'show'
     else
-      render 'show'
+      render 'edit'
     end
   end
 
@@ -58,6 +58,10 @@ class UsersController < ApplicationController
 
   def load_user
     @user ||= User.find params[:id]
+  end
+
+  def user_edit_params
+    params.require(:user).permit(:email, :name, :username, :avatar_url, :description)
   end
 
   def user_params
