@@ -7,11 +7,11 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'puma', '~> 5.0'
 
 gem 'rails_12factor'
-gem 'uglifier'
 
 # frontend
 gem 'webpacker'
 gem 'sass-rails'
+gem 'uglifier'
 
 group :production do
   gem 'pg'
